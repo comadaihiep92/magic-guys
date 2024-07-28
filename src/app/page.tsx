@@ -1,4 +1,5 @@
 import AboutUs from "@/components/AboutUs";
+import Footer from "@/components/Footer";
 import Home from "@/components/Home";
 import OurGames from "@/components/OurGames";
 import OurPartners from "@/components/OurPartners";
