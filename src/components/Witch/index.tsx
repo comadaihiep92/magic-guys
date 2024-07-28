@@ -9,11 +9,13 @@ const Witch = () => {
   return (
     <div className="relative mt-10 md:mt-[68px]">
       <motion.div
-        whileHover={{ scale: 1.2 }}
-        whileTap={{ scale: 1.1 }}
-        drag="x"
-        dragConstraints={{ left: -100, right: 100 }}
-        className="flex justify-center relative z-10 w-[300px] h-[243px] mb-[100px] md:mb-0 md:w-[533px] md:h-[437px]"
+        // whileHover={{ scale: 1.2 }}
+        // whileTap={{ scale: 1.1 }}
+        animate={{ y: [0, -20, 0] }}
+        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+        // drag="x"
+        // dragConstraints={{ left: -100, right: 100 }}
+        className="flex m-auto justify-center relative z-10 w-[300px] h-[243px] mb-[100px] md:mb-0 md:w-[533px] md:h-[437px]"
       >
         <WitchSvg />
       </motion.div>

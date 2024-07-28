@@ -37,7 +37,7 @@ const OurPartners = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
@@ -88,24 +88,18 @@ const OurPartners = () => {
         <SectionHeader title="Our Partners" className="m-auto text-center" />
         <ul className="mt-10 md:mt-20 p-10 w-full">
           <Slider {...settings}>
-            {data.map((item) => (
-              <li
-                key={item.id}
-                className="!w-[188px] !h-[72px] gap-3 md:!w-[260px] md:!h-[100px] flex items-center justify-center outline-none"
-              >
-                <a
-                  href={item.href}
-                  className="!w-[188px] !h-[72px] gap-3 md:!w-[260px] md:!h-[100px] flex items-center justify-center outline-none"
-                >
+            {data.map((image, index) => (
+              <div key={index} className="relative overflow-hidden">
+                <a href={image.href} className="relative group">
                   <Image
-                    src={item.imgUrl}
-                    alt="img"
                     width={260}
                     height={100}
-                    className="w-full h-auto"
+                    src={image.imgUrl}
+                    alt="abc"
+                    className="w-full h-auto rounded-lg transform transition-transform duration-300 group-hover:scale-105"
                   />
                 </a>
-              </li>
+              </div>
             ))}
           </Slider>
         </ul>

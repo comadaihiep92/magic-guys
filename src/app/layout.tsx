@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { appWithTranslation } from "next-i18next";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   description: "Magic",
 };
 
-export default function RootLayout({
+function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -29,3 +30,4 @@ export default function RootLayout({
     </html>
   );
 }
+export default RootLayout;
