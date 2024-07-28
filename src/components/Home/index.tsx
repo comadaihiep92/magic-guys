@@ -7,7 +7,7 @@ import { ArrowNextIcon, DropdownIcon } from "@/assets/svg";
 
 const Home = () => {
   return (
-    <div className="w-full h-screen bg-homeBg bg-no-repeat bg-cover relative bg-center home">
+    <div className="w-full h-screen bg-homeBg bg-white bg-no-repeat bg-cover relative bg-center home">
       <Header />
       <div className="absolute left-0 bottom-0 z-0">
         <Image
