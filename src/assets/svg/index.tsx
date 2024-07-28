@@ -32,8 +32,8 @@ export const WitchSvg = () => (
 
 export const LogoIcon = () => (
   <svg
-    width="109"
-    height="64"
+    // width="109"
+    // height="64"
     viewBox="0 0 109 64"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

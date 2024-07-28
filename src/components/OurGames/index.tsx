@@ -91,13 +91,13 @@ const OurGames = () => {
     },
   ];
   return (
-    <div id="our-games" className="w-full px-20 pb-10">
+    <div id="our-games" className="w-full px-4 md:px-20 pb-10">
       <SectionHeader
         title="Our Games"
         desc="As a pioneer of mobile app gamification, we take pride in originality and individuality, providing global players with state-of-the-art games that feature splendid storylines, sensational sound effects and magnificent animation that never cease to impress."
         className="text-center max-w-[860px] m-auto"
       />
-      <div className="grid grid-cols-4 gap-4 mt-20">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 md:mt-20">
         {data.map((item, index) => (
           <Link
             href={item.href}
@@ -113,9 +113,9 @@ const OurGames = () => {
               height={560}
               className="w-full h-auto transform transition-transform duration-300 group-hover:scale-110"
             />
-            <div className="absolute inset-0 flex flex-col justify-end p-4 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-hover:bg-[linear-gradient(360deg,_rgba(0,9,225,0.5)_6.79%,_rgba(0,0,0,0)_61.34%)] mix-blend-mode-normal">
-              <h2 className="text-white text-5xl font-bold">{item.title}</h2>
-              <p className="text-white text-sm">{item.desc}</p>
+            <div className="absolute inset-0 flex flex-col justify-end px-2 py-[11px] md:px-8 md:py-10 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-hover:bg-[linear-gradient(360deg,_rgba(0,9,225,0.5)_6.79%,_rgba(0,0,0,0)_61.34%)] mix-blend-mode-normal">
+              <h2 className="text-white text-2xl md:text-5xl font-bold">{item.title}</h2>
+              <p className="text-white text-xs md:text-sm">{item.desc}</p>
             </div>
           </Link>
         ))}

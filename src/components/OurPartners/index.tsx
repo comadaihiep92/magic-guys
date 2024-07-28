@@ -37,7 +37,7 @@ const OurPartners = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
@@ -84,16 +84,19 @@ const OurPartners = () => {
 
   return (
     <div id="our-partners" className="w-full">
-      <div className="w-full px-[190px] py-[120px] bg-[#F6F6F6]">
+      <div className="w-full box-border px-4 py-10 2xl:px-[190px] md:px-[80px] md:py-[120px] bg-[#F6F6F6]">
         <SectionHeader title="Our Partners" className="m-auto text-center" />
-        <ul className="mt-20">
+        <ul className="mt-10 md:mt-20 p-10 w-full">
           <Slider {...settings}>
             {data.map((item) => (
               <li
                 key={item.id}
-                className="!w-[260px] !h-[100px] flex items-center justify-center"
+                className="!w-[188px] !h-[72px] gap-3 md:!w-[260px] md:!h-[100px] flex items-center justify-center outline-none"
               >
-                <a href={item.href} className="outline-none">
+                <a
+                  href={item.href}
+                  className="!w-[188px] !h-[72px] gap-3 md:!w-[260px] md:!h-[100px] flex items-center justify-center outline-none"
+                >
                   <Image
                     src={item.imgUrl}
                     alt="img"

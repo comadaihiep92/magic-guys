@@ -18,9 +18,11 @@ const Footer = () => {
 
   return (
     <div id="contact" className="w-full">
-      <div className="w-full px-[230px] pt-[100px] pb-[104px] bg-footer flex">
-        <div className="flex flex-col gap-10 w-1/3">
-          <LogoIcon />
+      <div className="w-full px-4 py-10 flex-col md:flex-row items-center md:items-start 2xl:px-[230px] md:px-[80px] md:pt-[100px] pb-[62px] md:pb-[104px] bg-footerMobile md:bg-footer flex">
+        <div className="flex flex-col gap-10 w-full items-center md:items-start md:w-1/3">
+          <div className="w-[163px] h-[96px]">
+            <LogoIcon />
+          </div>
           <ul className="flex gap-6 items-center">
             {socials.map((item) => (
               <li key={item.id}>
@@ -31,14 +33,14 @@ const Footer = () => {
             ))}
           </ul>
         </div>
-        <div className="w-2/3 flex gap-10">
-          <div className="flex flex-col gap-10">
+        <div className="mt-[68px] gap-[68px] w-full flex-col md:flex-row md:mt-0 md:w-2/3 flex md:gap-10">
+          <div className="flex flex-col gap-5 md:gap-10">
             <h4 className="text-white text-2xl font-bold">Address</h4>
             <div className="flex gap-2">
               <div className="w-[29px]">
                 <AddressIcon />
               </div>
-              <div className="max-w-[362px]">
+              <div className="w-full md:max-w-[362px]">
                 <p className="text-sm text-white">
                   Valletta Buildings, South Street, Valletta - VLT 1103 Malta,
                   US
@@ -53,17 +55,17 @@ const Footer = () => {
               <div className="w-[29px]">
                 <PhoneIcon />
               </div>
-              <div className="max-w-[362px] flex gap-2">
+              <div className="w-full md:max-w-[362px] flex gap-2">
                 <p className="text-sm text-white">(+1) 555-0108-000</p>
                 <p className="text-sm text-white">or</p>
                 <p className="text-sm text-white">(+236) 555-0108</p>
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-5 md:gap-10">
             <h4 className="text-white text-2xl font-bold">Subscribe</h4>
             <div className="flex gap-2">
-              <div className="max-w-[362px]">
+              <div className="w-full md:max-w-[362px]">
                 <p className="text-sm text-white mb-3">
                   Subscribe to our newsletter and be the first to know about our
                   updates

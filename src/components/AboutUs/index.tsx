@@ -26,7 +26,7 @@ const AboutUs = () => {
     },
   ];
   return (
-    <div id="about-us" className="md:px-[380px] w-full box-border">
+    <div id="about-us" className="2xl:px-[380px] xl:px-20 md:px-4 w-full box-border">
       <div className="flex-col md:flex-row flex gap-10 flex-1">
         <div className="w-full md:w-1/2 px-4 md:px-0">
           <SectionHeader

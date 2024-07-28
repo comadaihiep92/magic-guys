@@ -41,13 +41,13 @@ const navs = [
 const Header = () => {
   return (
     <div className="bg-navBg fixed z-30 top-0 left-0 w-full flex items-center justify-between px-4 py-6 md:pb-[78px] md:px-20 md:pt-5">
-      <div className="hidden md:block">
+      <div className="hidden lg:block w-[163px] h-[96px]">
         <LogoIcon />
       </div>
-      <div className="block md:hidden">
+      <div className="block lg:hidden">
         <LogoMobileIcon />
       </div>
-      <ul className="hidden md:flex items-center gap-[84px]">
+      <ul className="hidden lg:flex items-center gap-[84px]">
         {navs.map((nav, index) => (
           <li key={nav.id}>
             {nav.id === 5 ? (
@@ -71,7 +71,7 @@ const Header = () => {
           </li>
         ))}
       </ul>
-      <button className="block md:hidden">
+      <button className="block lg:hidden">
         <BurgerMenuIcon />
       </button>
     </div>
