@@ -9,10 +9,10 @@ type SectionHeaderProps = {
 const SectionHeader = ({ title, desc, className }: SectionHeaderProps) => {
   return (
     <div className={className}>
-      <h3 className={`text-[60px] font-black font-playfair text-black`}>
+      <h3 className={`text-[40px] md:text-[60px] font-black font-playfair text-black`}>
         {title}
       </h3>
-      {desc && <p className={`pt-10 text-[#757575] text-sm`}>{desc}</p>}
+      {desc && <p className={`pt-4 md:pt-10 text-[#757575] text-sm`}>{desc}</p>}
     </div>
   );
 };

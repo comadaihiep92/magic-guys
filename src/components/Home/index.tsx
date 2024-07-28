@@ -10,10 +10,11 @@ const Home = () => {
   return (
     <div className="overflow-hidden w-full h-screen bg-homeMobileBg md:bg-homeBg bg-white bg-no-repeat bg-cover relative bg-center home">
       <Header />
-      <div className="absolute left-12 md:left-0 bottom-0 w-full z-10 md:z-0">
+      <div className="absolute left-14 md:left-0 bottom-0 w-full z-10 md:z-0">
         <Image
           width={500}
           height={500}
+          className="w-full h-auto"
           src="/assets/images/fairy.png"
           alt="fairy"
         />

@@ -1,7 +1,7 @@
 export const WitchSvg = () => (
   <svg
-    width="533"
-    height="437"
+    // width="533"
+    // height="437"
     viewBox="0 0 533 437"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -365,8 +365,8 @@ export const ArrowNextIcon = () => (
 
 export const Map = () => (
   <svg
-    width="1160"
-    height="428"
+    // width="1160"
+    // height="428"
     viewBox="0 0 1160 428"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -403,8 +403,8 @@ export const Map = () => (
 
 export const Pin = () => (
   <svg
-    width="760"
-    height="292"
+    // width="760"
+    // height="292"
     viewBox="0 0 760 292"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
