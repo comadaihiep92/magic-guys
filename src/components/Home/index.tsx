@@ -48,7 +48,7 @@ const Home = () => {
             </button>
           </form>
         </div>
-        <button className="absolute pt-2 right-[70px] bottom-[25px] rounded-[100%] bg-white w-[66px] h-[66px] flex items-center justify-center shadow-button">
+        <button className="absolute pt-2 right-[80px] bottom-[38px] rounded-[100%] bg-white w-[66px] h-[66px] flex items-center justify-center shadow-button">
           <DropdownIcon />
         </button>
       </div>
