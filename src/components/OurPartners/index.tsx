@@ -3,37 +3,98 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Image from "next/image";
+import SectionHeader from "../SectionHeader";
+import "./OurPartners.css";
 const OurPartners = () => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 4,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
+  const data = [
+    {
+      id: 1,
+      imgUrl: "/assets/images/logos/eagames.png",
+    },
+    {
+      id: 2,
+      imgUrl: "/assets/images/logos/game.png",
+    },
+    {
+      id: 3,
+      imgUrl: "/assets/images/logos/first_power_up.png",
+    },
+    {
+      id: 4,
+      imgUrl: "/assets/images/logos/walt_disney.png",
+    },
+    {
+      id: 5,
+      imgUrl: "/assets/images/logos/bookpro.png",
+    },
+    {
+      id: 6,
+      imgUrl: "/assets/images/logos/sega.png",
+    },
+    {
+      id: 7,
+      imgUrl: "/assets/images/logos/2k.png",
+    },
+  ];
+
   return (
-    <div className="w-full">
-      <Slider {...settings}>
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
-      </Slider>
+    <div className="w-full px-[190px] py-[120px] bg-[#F6F6F6]">
+      <SectionHeader title="Our Partners" className="m-auto text-center" />
+      <div className="mt-20">
+        <Slider {...settings}>
+          {data.map((item) => (
+            <div
+              key={item.id}
+              className="!w-[260px] !h-[100px] flex items-center justify-center"
+            >
+              <Image
+                src={item.imgUrl}
+                alt="img"
+                width={260}
+                height={100}
+                className="w-full h-auto"
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };
