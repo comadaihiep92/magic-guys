@@ -83,7 +83,7 @@ const OurPartners = () => {
   ];
 
   return (
-    <div className="w-full">
+    <div id="our-partners" className="w-full">
       <div className="w-full px-[190px] py-[120px] bg-[#F6F6F6]">
         <SectionHeader title="Our Partners" className="m-auto text-center" />
         <ul className="mt-20">

@@ -17,7 +17,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className="w-full">
+    <div id="contact" className="w-full">
       <div className="w-full px-[230px] pt-[100px] pb-[104px] bg-footer flex">
         <div className="flex flex-col gap-10 w-1/3">
           <LogoIcon />

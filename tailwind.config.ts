@@ -16,6 +16,7 @@ const config: Config = {
         navBg:
           "linear-gradient(180deg, rgba(0, 0, 0, 0.5) -25%, rgba(0, 0, 0, 0) 100%)",
         homeBg: "url('/assets/images/home_bg.png')",
+        homeMobileBg: "url('/assets/images/home_mobile_bg.png')",
         homeAbout: "url('/assets/images/pin_map.png')",
         footer: "url('/assets/images/footer_bg.png')",
         aboutGradient:

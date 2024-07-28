@@ -1,4 +1,9 @@
-import { CaretIcon, LogoIcon } from "@/assets/svg";
+import {
+  BurgerMenuIcon,
+  CaretIcon,
+  LogoIcon,
+  LogoMobileIcon,
+} from "@/assets/svg";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -9,22 +14,22 @@ const navs = [
   {
     id: 1,
     name: "ABOUT US",
-    href: "#about_us",
+    href: "#about-us",
   },
   {
     id: 2,
     name: "GAMES",
-    href: "#games",
+    href: "#our-games",
   },
   {
     id: 3,
     name: "PARTNERS",
-    href: "#partners",
+    href: "#our-partners",
   },
   {
     id: 4,
     name: "CONTACT US",
-    href: "#contact_us",
+    href: "#contact-us",
   },
   {
     id: 5,
@@ -35,11 +40,14 @@ const navs = [
 
 const Header = () => {
   return (
-    <div className="bg-navBg fixed z-30 top-0 left-0 z-10 px-20 pt-5 w-full flex items-center justify-between pb-[78px]">
-      <div>
+    <div className="bg-navBg fixed z-30 top-0 left-0 w-full flex items-center justify-between px-4 py-6 md:pb-[78px] md:px-20 md:pt-5">
+      <div className="hidden md:block">
         <LogoIcon />
       </div>
-      <ul className="flex items-center gap-[84px]">
+      <div className="block md:hidden">
+        <LogoMobileIcon />
+      </div>
+      <ul className="hidden md:flex items-center gap-[84px]">
         {navs.map((nav, index) => (
           <li key={nav.id}>
             {nav.id === 5 ? (
@@ -63,6 +71,9 @@ const Header = () => {
           </li>
         ))}
       </ul>
+      <button className="block md:hidden">
+        <BurgerMenuIcon />
+      </button>
     </div>
   );
 };
