@@ -16,8 +16,10 @@ const config: Config = {
         navBg:
           "linear-gradient(180deg, rgba(0, 0, 0, 0.5) -25%, rgba(0, 0, 0, 0) 100%)",
         homeBg: "url('/assets/images/home_bg.png')",
+        homeMobileBg: "url('/assets/images/home_mobile_bg.png')",
         homeAbout: "url('/assets/images/pin_map.png')",
         footer: "url('/assets/images/footer_bg.png')",
+        footerMobile: "url('/assets/images/footer_mobile_bg.png')",
         aboutGradient:
           "linear-gradient(180deg, rgba(255, 255, 255, 0) -26.4%, #FFFFFF 82.58%)",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

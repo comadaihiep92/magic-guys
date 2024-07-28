@@ -26,19 +26,19 @@ const AboutUs = () => {
     },
   ];
   return (
-    <div className="px-[380px] w-full box-border">
-      <div className="flex gap-10 flex-1">
-        <div className="w-1/2">
+    <div id="about-us" className="2xl:px-[380px] xl:px-20 md:px-4 w-full box-border">
+      <div className="flex-col md:flex-row flex gap-10 flex-1">
+        <div className="w-full md:w-1/2 px-4 md:px-0">
           <SectionHeader
             title="About Us"
             desc="Browse our selection of free online games and have a great time without leaving the site! Our Kids Games option also includes game reviews, extensive game cheats and walkthroughs, and much more. We have exclusive free downloads, videos, and articles as well. Etech reviews the most popular kids games from all the most popular video gaming platforms, so you don’t need to search around for fun anywhere else on the Internet. Explore a whole new world of gaming on Etech."
           />
-          <div className="pt-20">
-            <Count count="600" title="Users" unit="M" />
-            <Count count="135" title="Games" />
+          <div className="pt-[40px] md:pt-20 flex gap-4 md:block">
+            <Count count="600" title="Users" unit="M" className="flex-1" />
+            <Count count="135" title="Games" className="flex-1" />
           </div>
         </div>
-        <div className="w-1/2 px-[75px] py-[115px] flex flex-col gap-10 bg-[#EEEEEE]">
+        <div className="w-full md:w-1/2 px-4 py-10 md:px-[75px] md:py-[115px] flex flex-col gap-10 bg-[#EEEEEE]">
           {workGroups.map((item) => (
             <div key={item.id} className="flex gap-6">
               <div className="min-w-[50px] h-[50px] flex items-center justify-center rounded-[50%] bg-[#E3FCFF]">

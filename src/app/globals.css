@@ -1,35 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-} */
 
 * {
   margin: 0;
@@ -53,4 +24,25 @@ body {
   );
   mix-blend-mode: normal;
   backdrop-filter: blur(0.5px);
+}
+
+.home_mobile::after {
+  position: absolute;
+  width: 200%;
+  height: 80%;
+  left: -50%;
+  content: "";
+  top: 0px;
+  background: radial-gradient(
+    27.72% 27.79% at 50.81% 68.15%,
+    #210544 0%,
+    rgba(23, 5, 68, 0.71) 50.52%,
+    rgba(23, 5, 68, 0) 100%
+  );
+  mix-blend-mode: normal;
+  backdrop-filter: blur(0.5px);
+}
+
+html {
+  @apply scroll-smooth;
 }

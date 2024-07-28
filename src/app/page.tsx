@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default function App() {
   return (
-    <main className="flex w-full min-h-screen flex-col gap-[128px] items-center justify-between">
+    <main className="flex w-full min-h-screen flex-col gap-12 md:gap-[128px] items-center justify-between">
       <Home />
       <AboutUs />
       <OurGames />
