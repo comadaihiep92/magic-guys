@@ -4,6 +4,7 @@ import Header from "../Header";
 import Image from "next/image";
 import Time from "../Time";
 import { ArrowNextIcon, DropdownIcon } from "@/assets/svg";
+import FormEmail from "../FormEmail";
 
 const Home = () => {
   return (
@@ -32,21 +33,7 @@ const Home = () => {
             We will back to something amazing. Getting the latest updates about
             our games. Please sign up to our newsletter.
           </p>
-          <form
-            className="relative"
-            onSubmit={(e) => {
-              e.preventDefault();
-            }}
-          >
-            <input
-              className="px-[14px] w-full py-[18px] rounded-lg text-sm pr-12"
-              type="email"
-              placeholder="Enter your email"
-            />
-            <button className="absolute top-0 right-0 w-10 h-full flex items-center cursor-pointer">
-              <ArrowNextIcon />
-            </button>
-          </form>
+          <FormEmail />
         </div>
         <button className="absolute pt-2 right-[80px] bottom-[38px] rounded-[100%] bg-white w-[66px] h-[66px] flex items-center justify-center shadow-button">
           <DropdownIcon />
