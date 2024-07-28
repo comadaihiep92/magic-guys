@@ -3,13 +3,17 @@ import React from "react";
 import Header from "../Header";
 import Image from "next/image";
 import Time from "../Time";
-import { ArrowNextIcon, DropdownIcon } from "@/assets/svg";
 import FormEmail from "../FormEmail";
 import ScrollButton from "../ScrollButton";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
+  const { t } = useTranslation("home");
   return (
-    <div id="home" className="overflow-hidden w-full h-screen bg-homeMobileBg md:bg-homeBg bg-white bg-no-repeat bg-cover relative bg-center home_mobile home">
+    <div
+      id="home"
+      className="overflow-hidden w-full h-screen bg-homeMobileBg md:bg-homeBg bg-white bg-no-repeat bg-cover relative bg-center home_mobile home"
+    >
       <Header />
       <div className="absolute left-14 md:left-0 bottom-0 z-10 md:z-0">
         <Image
@@ -37,9 +41,10 @@ const Home = () => {
             We will back to something amazing. Getting the latest updates about
             our games. Please sign up to our newsletter.
           </p>
+
           <FormEmail />
         </div>
-  
+
         <ScrollButton />
       </div>
     </div>

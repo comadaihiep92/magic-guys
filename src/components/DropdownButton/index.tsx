@@ -5,18 +5,21 @@ import { useEffect, useRef, useState } from "react";
 export default function DropdownButton() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(2);
-  const dropdownRef = useRef(null);
+  const dropdownRef = useRef<HTMLInputElement | null>(null);
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleOptionClick = (option) => {
-    setSelectedOption(option);
-    setIsOpen(false); // Close the dropdown after selection
-  };
+  // const handleOptionClick = (option: number) => {
+  //   setSelectedOption(option);
+  //   setIsOpen(false);
+  // };
 
-  const handleClickOutside = (event) => {
-    if (dropdownRef.current && !dropdownRef.current?.contains(event.target)) {
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current?.contains(event?.target as Node)
+    ) {
       setIsOpen(false);
     }
   };
