@@ -5,10 +5,11 @@ import Image from "next/image";
 import Time from "../Time";
 import { ArrowNextIcon, DropdownIcon } from "@/assets/svg";
 import FormEmail from "../FormEmail";
+import ScrollButton from "../ScrollButton";
 
 const Home = () => {
   return (
-    <div className="overflow-hidden w-full h-screen bg-homeMobileBg md:bg-homeBg bg-white bg-no-repeat bg-cover relative bg-center home_mobile home">
+    <div id="home" className="overflow-hidden w-full h-screen bg-homeMobileBg md:bg-homeBg bg-white bg-no-repeat bg-cover relative bg-center home_mobile home">
       <Header />
       <div className="absolute left-14 md:left-0 bottom-0 z-10 md:z-0">
         <Image
@@ -38,9 +39,8 @@ const Home = () => {
           </p>
           <FormEmail />
         </div>
-        <button className="absolute pt-2 right-[18px] bottom-[100px] md:right-[80px] md:bottom-[38px] rounded-[100%] bg-white w-[66px] h-[66px] flex items-center justify-center shadow-button">
-          <DropdownIcon />
-        </button>
+  
+        <ScrollButton />
       </div>
     </div>
   );
