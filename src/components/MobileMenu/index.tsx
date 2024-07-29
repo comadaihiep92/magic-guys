@@ -3,9 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { BurgerMenuIcon } from "@/assets/svg";
 import { navs } from "../Header";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const t = useTranslations("HomePage");
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -70,7 +72,7 @@ export default function MobileMenu() {
                     }`}
                     href={nav.href}
                   >
-                    {nav.name}
+                    {`${t(nav.name)}`}
                   </Link>
                 </li>
               ))}

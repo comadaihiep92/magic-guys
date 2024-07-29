@@ -7,7 +7,9 @@ import Image from "next/image";
 import SectionHeader from "../SectionHeader";
 import "./OurPartners.css";
 import Footer from "../Footer";
+import { useTranslations } from "next-intl";
 const OurPartners = () => {
+  const t = useTranslations("HomePage");
   const settings = {
     dots: false,
     infinite: true,
@@ -85,7 +87,10 @@ const OurPartners = () => {
   return (
     <div id="our-partners" className="w-full">
       <div className="w-full box-border px-4 py-10 2xl:px-[190px] md:px-[80px] md:py-[120px] bg-[#F6F6F6]">
-        <SectionHeader title="Our Partners" className="m-auto text-center" />
+        <SectionHeader
+          title={t("our_partners.title")}
+          className="m-auto text-center"
+        />
         <ul className="mt-10 md:mt-20 p-10 w-full">
           <Slider {...settings}>
             {data.map((image, index) => (

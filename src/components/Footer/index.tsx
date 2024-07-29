@@ -8,8 +8,10 @@ import {
 } from "@/assets/svg";
 import React from "react";
 import FormEmail from "../FormEmail";
+import { useTranslations } from "next-intl";
 
 const Footer = () => {
+  const t = useTranslations("HomePage");
   const socials = [
     { id: 1, icon: XIcon, href: "/" },
     { id: 2, icon: FacebookIcon, href: "/" },
@@ -35,19 +37,17 @@ const Footer = () => {
         </div>
         <div className="mt-[68px] gap-[68px] w-full flex-col md:flex-row md:mt-0 md:w-2/3 flex md:gap-10">
           <div className="flex flex-col gap-5 md:gap-10">
-            <h4 className="text-white text-2xl font-bold">Address</h4>
+            <h4 className="text-white text-2xl font-bold">
+              {t("footer.section_title")}
+            </h4>
             <div className="flex gap-2">
               <div className="w-[29px]">
                 <AddressIcon />
               </div>
               <div className="w-full md:max-w-[362px]">
-                <p className="text-sm text-white">
-                  Valletta Buildings, South Street, Valletta - VLT 1103 Malta,
-                  US
-                </p>
+                <p className="text-sm text-white">{t("footer.address")}</p>
                 <p className="mt-3 text-sm text-white">
-                  20 Phan Dang Luu street, Hai Chau District, Danang city,
-                  Vietnam
+                  {t("footer.address2")}
                 </p>
               </div>
             </div>
@@ -57,18 +57,19 @@ const Footer = () => {
               </div>
               <div className="w-full md:max-w-[362px] flex gap-2">
                 <p className="text-sm text-white">(+1) 555-0108-000</p>
-                <p className="text-sm text-white">or</p>
+                <p className="text-sm text-white">{t("footer.or")}</p>
                 <p className="text-sm text-white">(+236) 555-0108</p>
               </div>
             </div>
           </div>
           <div className="flex flex-col gap-5 md:gap-10">
-            <h4 className="text-white text-2xl font-bold">Subscribe</h4>
+            <h4 className="text-white text-2xl font-bold">
+              {t("footer.section_title2")}
+            </h4>
             <div className="flex gap-2">
               <div className="w-full md:max-w-[362px]">
                 <p className="text-sm text-white mb-3">
-                  Subscribe to our newsletter and be the first to know about our
-                  updates
+                  {t("footer.subscribe")}
                 </p>
                 <FormEmail className="bg-transparent border border-solid border-white text-white" />
               </div>

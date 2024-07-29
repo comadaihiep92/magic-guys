@@ -2,10 +2,8 @@
 import { Map, Pin, WitchSvg } from "@/assets/svg";
 import React from "react";
 import { motion } from "framer-motion";
-import { useTranslation } from "react-i18next";
 
 const Witch = () => {
-  const { t, i18n } = useTranslation();
   return (
     <div className="relative mt-10 md:mt-[68px]">
       <motion.div

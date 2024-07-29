@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { appWithTranslation } from "next-i18next";
+import { getMessages } from "next-intl/server";
+import { NextIntlClientProvider } from "next-intl";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -17,15 +18,22 @@ export const metadata: Metadata = {
   description: "Magic",
 };
 
-function RootLayout({
+async function RootLayout({
   children,
+  params: { locale },
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale: string };
 }>) {
+  const message = await getMessages();
+  console.log("params ->", locale, "message ->", message);
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className={`${montserrat.variable} ${playfair_Display.variable}`}>
-        {children}
+        <NextIntlClientProvider messages={message}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );
