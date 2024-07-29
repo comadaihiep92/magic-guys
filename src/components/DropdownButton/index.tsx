@@ -98,7 +98,9 @@ export default function DropdownButton({
                 src={"/assets/images/vn_flag.png"}
                 alt="flag"
               />
-              <span className="text-[10px] font-bold">Vietnamese</span>
+              <span className="text-[10px] font-bold">
+                {t("nav.vietnamese")}
+              </span>
             </button>
             <hr className="border border-solid border-[#C4C4C4]" />
             <button
@@ -119,7 +121,7 @@ export default function DropdownButton({
                 src={"/assets/images/us_flag.png"}
                 alt="flag"
               />
-              <span className="text-[10px] font-bold">English</span>
+              <span className="text-[10px] font-bold">{t("nav.english")}</span>
             </button>
           </div>
         </div>
