@@ -43,7 +43,7 @@ export default function ScrollButton() {
         backgroundColor: "white",
         borderRadius: "50%",
       }}
-      className="shadow-button right-[18px] bottom-6 md:right-[80px] md:bottom-[38px]"
+      className="shadow-button right-[18px] bottom-6 md:right-[80px] md:bottom-[38px] z-50"
     >
       <Link href={"#home"} className="w-full h-full flex justify-center items-center">
         <svg
