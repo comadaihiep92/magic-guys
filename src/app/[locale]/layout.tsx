@@ -26,7 +26,6 @@ async function RootLayout({
   params: { locale: string };
 }>) {
   const message = await getMessages();
-  console.log("params ->", locale, "message ->", message);
 
   return (
     <html lang={locale}>

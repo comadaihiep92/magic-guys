@@ -20,7 +20,7 @@ const Footer = () => {
 
   return (
     <div id="contact" className="w-full">
-      <div className="w-full px-4 py-10 flex-col md:flex-row items-center md:items-start 2xl:px-[230px] md:px-[80px] md:pt-[100px] pb-[62px] md:pb-[104px] bg-footerMobile md:bg-footer flex">
+      <div className="w-full px-4 py-10 flex-col md:flex-col md:gap-10 md:items-center lg:flex-row items-center lg:items-start 2xl:px-[230px] md:px-[80px] md:pt-[100px] pb-[62px] md:pb-[104px] bg-footerMobile lg:bg-footer flex">
         <div className="flex flex-col gap-10 w-full items-center md:items-start md:w-1/3">
           <div className="w-[163px] h-[96px]">
             <LogoIcon />
@@ -35,7 +35,7 @@ const Footer = () => {
             ))}
           </ul>
         </div>
-        <div className="mt-[68px] gap-[68px] w-full flex-col md:flex-row md:mt-0 md:w-2/3 flex md:gap-10">
+        <div className="mt-[68px] gap-[68px] w-full md:w-full flex-col md:flex-row md:mt-0 lg:w-2/3 flex md:gap-10">
           <div className="flex flex-col gap-5 md:gap-10">
             <h4 className="text-white text-2xl font-bold">
               {t("footer.section_title")}

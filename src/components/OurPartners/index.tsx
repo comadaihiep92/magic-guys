@@ -86,7 +86,7 @@ const OurPartners = () => {
 
   return (
     <div id="our-partners" className="w-full">
-      <div className="w-full box-border px-4 py-10 2xl:px-[190px] md:px-[80px] md:py-[120px] bg-[#F6F6F6]">
+      <div className="w-full box-border px-4 py-10 2xl:px-[190px] md:px-[40px] md:py-[60px] lg:px-[80px] lg:py-[120px] bg-[#F6F6F6]">
         <SectionHeader
           title={t("our_partners.title")}
           className="m-auto text-center"

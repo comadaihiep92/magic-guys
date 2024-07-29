@@ -1,29 +1,28 @@
 import { CaretIcon, CheckMarkIcon } from "@/assets/svg";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
-import { useParams, usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState, useTransition } from "react";
 
-export default function DropdownButton() {
-  const t = useTranslations('HomePage')
+type DropdownButtonProps = {
+  className?: string;
+  classNameBtn?: string;
+  classNameDropdown?: string;
+};
+
+export default function DropdownButton({
+  className,
+  classNameBtn,
+  classNameDropdown,
+}: DropdownButtonProps) {
+  const t = useTranslations("HomePage");
+  const [isPending, startTransition] = useTransition();
+  const router = useRouter();
+  const localActive = useLocale();
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(2);
   const dropdownRef = useRef<HTMLInputElement | null>(null);
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
-  };
-
-  const [isPending, startTransition] = useTransition();
-  const pathname = usePathname();
-  const params = useParams();
-  const router = useRouter();
-
-  const handleOptionClick = (option: number) => {
-    startTransition(() => {
-      router.replace(option === 1 ? "vi" : "en");
-    });
-    setSelectedOption(option);
-    setIsOpen(false);
   };
 
   const handleClickOutside = (event: MouseEvent) => {
@@ -42,17 +41,27 @@ export default function DropdownButton() {
     };
   }, []);
 
+  const onSelectChange = (data: string) => {
+    const nextLocale = data;
+    startTransition(() => {
+      router.replace(`/${nextLocale}`);
+    });
+  };
+
   return (
-    <div className="relative inline-block text-left" ref={dropdownRef}>
+    <div
+      className={`relative inline-block text-left ${className}`}
+      ref={dropdownRef}
+    >
       <button
-        className="flex items-center justify-center gap-[10px]"
+        className={`flex items-center justify-center gap-[10px] text-white ${classNameBtn}`}
         onClick={toggleDropdown}
       >
         <Image
           width={40}
           height={40}
           src={
-            selectedOption === 1
+            localActive === "vi"
               ? "/assets/images/vn_flag.png"
               : "/assets/images/us_flag.png"
           }
@@ -62,7 +71,9 @@ export default function DropdownButton() {
       </button>
 
       {isOpen && (
-        <div className="origin-top-right absolute right-0 mt-2 w-[156px] p-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+        <div
+          className={`origin-top-right absolute right-0 mt-2 w-[156px] p-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 ${classNameDropdown}`}
+        >
           <div
             className="py-1"
             role="menu"
@@ -70,13 +81,13 @@ export default function DropdownButton() {
             aria-labelledby="options-menu"
           >
             <button
-              onClick={() => handleOptionClick(1)}
+              onClick={() => onSelectChange("vi")}
               className="w-full flex items-center gap-1"
               role="menuitem"
             >
               <div
                 className={`mr-1 ${
-                  selectedOption === 1 ? "visible" : "invisible"
+                  localActive === "vi" ? "visible" : "invisible"
                 }`}
               >
                 <CheckMarkIcon />
@@ -91,13 +102,13 @@ export default function DropdownButton() {
             </button>
             <hr className="border border-solid border-[#C4C4C4]" />
             <button
-              onClick={() => handleOptionClick(2)}
+              onClick={() => onSelectChange("en")}
               className="w-full flex items-center gap-1"
               role="menuitem"
             >
               <div
                 className={`mr-1 ${
-                  selectedOption === 2 ? "visible" : "invisible"
+                  localActive === "en" ? "visible" : "invisible"
                 }`}
               >
                 <CheckMarkIcon />
