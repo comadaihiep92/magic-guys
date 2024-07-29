@@ -1,11 +1,29 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 import SectionHeader from "../SectionHeader";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 const OurGames = () => {
   const t = useTranslations("HomePage");
+  const control = useAnimation();
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(wrapperRef);
+  const textVariants = {
+    hidden: { opacity: 0, y: 75 },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView]);
+
   const data = [
     {
       id: 1,
@@ -99,31 +117,44 @@ const OurGames = () => {
         desc={t("our_games.desc")}
         className="text-center max-w-[860px] m-auto"
       />
-      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10 md:mt-20">
-        {data.map((item, index) => (
-          <Link
-            href={item.href}
-            key={index}
-            className={`relative group rounded-lg overflow-hidden shadow-lg ${
-              index % 4 === 1 || index % 4 === 3 ? "top-[50px]" : ""
-            }`}
-          >
-            <Image
-              src={item.bgUrl}
-              alt={"bg"}
-              width={410}
-              height={560}
-              className="w-full h-auto transform transition-transform duration-300 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 flex flex-col justify-end px-2 py-[11px] md:px-4 md:py-6 lg:px-8 lg:py-10 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-hover:bg-[linear-gradient(360deg,_rgba(0,9,225,0.5)_6.79%,_rgba(0,0,0,0)_61.34%)] mix-blend-mode-normal">
-              <h2 className="text-white text-2xl md:text-3xl lg:text-5xl font-bold">
-                {item.title}
-              </h2>
-              <p className="text-white text-xs md:text-sm">{item.desc}</p>
-            </div>
-          </Link>
-        ))}
-      </div>
+      <motion.div
+        ref={wrapperRef}
+        variants={textVariants}
+        initial="hidden"
+        animate={control}
+        transition={{
+          type: "tween",
+          duration: 0.7,
+          ease: "easeInOut",
+          delay: 0.05,
+        }}
+      >
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10 md:mt-20">
+          {data.map((item, index) => (
+            <Link
+              key={item.id}
+              href={item.href}
+              className={`relative group rounded-lg overflow-hidden shadow-lg ${
+                index % 4 === 1 || index % 4 === 3 ? "top-[50px]" : ""
+              }`}
+            >
+              <Image
+                src={item.bgUrl}
+                alt={"bg"}
+                width={410}
+                height={560}
+                className="w-full h-auto transform transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 flex flex-col justify-end px-2 py-[11px] md:px-4 md:py-6 lg:px-8 lg:py-10 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-hover:bg-[linear-gradient(360deg,_rgba(0,9,225,0.5)_6.79%,_rgba(0,0,0,0)_61.34%)] mix-blend-mode-normal">
+                <h2 className="text-white text-2xl md:text-3xl lg:text-5xl font-bold">
+                  {item.title}
+                </h2>
+                <p className="text-white text-xs md:text-sm">{item.desc}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </motion.div>
     </div>
   );
 };
