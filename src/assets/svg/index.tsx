@@ -116,7 +116,7 @@ export const CaretIcon = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path d="M0 0L5 5L10 0H0Z" fill="white" />
+    <path d="M0 0L5 5L10 0H0Z" fill="currentColor" />
   </svg>
 );
 
