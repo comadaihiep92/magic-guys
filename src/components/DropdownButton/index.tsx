@@ -1,8 +1,11 @@
 import { CaretIcon, CheckMarkIcon } from "@/assets/svg";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useParams, usePathname, useRouter } from "next/navigation";
+import { useEffect, useRef, useState, useTransition } from "react";
 
 export default function DropdownButton() {
+  const t = useTranslations('HomePage')
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(2);
   const dropdownRef = useRef<HTMLInputElement | null>(null);
@@ -10,10 +13,18 @@ export default function DropdownButton() {
     setIsOpen(!isOpen);
   };
 
-  // const handleOptionClick = (option: number) => {
-  //   setSelectedOption(option);
-  //   setIsOpen(false);
-  // };
+  const [isPending, startTransition] = useTransition();
+  const pathname = usePathname();
+  const params = useParams();
+  const router = useRouter();
+
+  const handleOptionClick = (option: number) => {
+    startTransition(() => {
+      router.replace(option === 1 ? "vi" : "en");
+    });
+    setSelectedOption(option);
+    setIsOpen(false);
+  };
 
   const handleClickOutside = (event: MouseEvent) => {
     if (
@@ -40,7 +51,11 @@ export default function DropdownButton() {
         <Image
           width={40}
           height={40}
-          src={"/assets/images/us_flag.png"}
+          src={
+            selectedOption === 1
+              ? "/assets/images/vn_flag.png"
+              : "/assets/images/us_flag.png"
+          }
           alt="flag"
         />
         <CaretIcon />
@@ -54,7 +69,11 @@ export default function DropdownButton() {
             aria-orientation="vertical"
             aria-labelledby="options-menu"
           >
-            <button className="w-full flex items-center gap-1" role="menuitem">
+            <button
+              onClick={() => handleOptionClick(1)}
+              className="w-full flex items-center gap-1"
+              role="menuitem"
+            >
               <div
                 className={`mr-1 ${
                   selectedOption === 1 ? "visible" : "invisible"
@@ -71,7 +90,11 @@ export default function DropdownButton() {
               <span className="text-[10px] font-bold">Vietnamese</span>
             </button>
             <hr className="border border-solid border-[#C4C4C4]" />
-            <button className="w-full flex items-center gap-1" role="menuitem">
+            <button
+              onClick={() => handleOptionClick(2)}
+              className="w-full flex items-center gap-1"
+              role="menuitem"
+            >
               <div
                 className={`mr-1 ${
                   selectedOption === 2 ? "visible" : "invisible"

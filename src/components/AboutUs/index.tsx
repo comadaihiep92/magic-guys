@@ -3,39 +3,44 @@ import SectionHeader from "../SectionHeader";
 import Count from "../Count";
 import { DesignIcon, HourIcon, TeamIcon } from "@/assets/svg";
 import Witch from "../Witch";
+import { useTranslations } from "next-intl";
 
 const AboutUs = () => {
+  const t = useTranslations("HomePage");
   const workGroups = [
     {
       id: 1,
-      title: "24 - Hour",
-      desc: "24/7 access ensures operators' businesses runs smoothly all year long.",
+      title: t('about.hour'),
+      desc: t('about.hours_desc'),
       icon: HourIcon,
     },
     {
       id: 2,
-      title: "Design",
-      desc: "Combining imaginative universes, play dynamics, and unprecedented gameplay, our games transcend the boundaries of the virtual world by weaving innovative gameplay.",
+      title: t('about.design'),
+      desc: t('about.design_desc'),
       icon: DesignIcon,
     },
     {
       id: 3,
-      title: "Team",
-      desc: "Etech is an award-winning, international studio of designers, artists, animators and producers that create content for the biggest names in film and video games. ",
+      title: t('about.team'),
+      desc: t('about.team_desc'),
       icon: TeamIcon,
     },
   ];
   return (
-    <div id="about-us" className="2xl:px-[380px] xl:px-20 md:px-4 w-full box-border">
+    <div
+      id="about-us"
+      className="2xl:px-[380px] xl:px-20 md:px-4 w-full box-border"
+    >
       <div className="flex-col md:flex-row flex gap-10 flex-1">
         <div className="w-full md:w-1/2 px-4 md:px-0">
           <SectionHeader
-            title="About Us"
-            desc="Browse our selection of free online games and have a great time without leaving the site! Our Kids Games option also includes game reviews, extensive game cheats and walkthroughs, and much more. We have exclusive free downloads, videos, and articles as well. Etech reviews the most popular kids games from all the most popular video gaming platforms, so you don’t need to search around for fun anywhere else on the Internet. Explore a whole new world of gaming on Etech."
+            title={t('about.title')}
+            desc={t('about.desc')}
           />
           <div className="pt-[40px] md:pt-20 flex gap-4 md:block">
-            <Count count="600" title="Users" unit="M" className="flex-1" />
-            <Count count="135" title="Games" className="flex-1" />
+            <Count count="600" title={t('about.users')} unit={t('about.unit')} className="flex-1" />
+            <Count count="135" title={t('about.games')} className="flex-1" />
           </div>
         </div>
         <div className="w-full md:w-1/2 px-4 py-10 md:px-[75px] md:py-[115px] flex flex-col gap-10 bg-[#EEEEEE]">
