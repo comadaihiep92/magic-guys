@@ -4,7 +4,7 @@ import Time from "../Time";
 import { useTranslations } from "next-intl";
 
 type CountdownTimerProps = {
-  targetDate?: number;
+  targetDate: number;
 };
 const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
   const t = useTranslations("HomePage");
